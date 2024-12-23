@@ -1,30 +1,194 @@
 <!DOCTYPE html>
 <html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=480" />
+    <title>Різдвяний вечір</title>
+    <meta name="description" content="Відчуйте радість Різдва разом з нами!" />
+    <meta
+      property="og:image"
+      content="https://christmas-invitation-2024.vercel.app/img/fb_img.jpg"
+    />
+    <meta
+      property="og:description"
+      content="Відчуйте радість Різдва разом з нами!"
+    />
+    <meta property="og:site_name" content="christmas.invitation" />
+    <meta property="og:title" content="Різдвяний вечір" />
+    <meta property="og:type" content="website" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="icon" sizes="any" type="image/svg+xml" href="img/favicon.svg" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markup template</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <link rel="shortcut icon" type="image/x-icon" href="">
-    <link rel="icon" sizes="any" type="image/svg+xml" href="">
-    <link rel="stylesheet" href="css/index.css">
-</head>
+  <body>
+    <div class="wrapper">
+      <main>
+        <section class="hero">
+          <div class="container">
+            <h1
+              class="hero__title"
+              data-aos="fade-in"
+              data-aos-duration="1200"
+              data-aos-delay="2000"
+            >
+              Merry Christmas
+            </h1>
+            <p
+              class="hero__invitation"
+              data-aos="fade-in"
+              data-aos-duration="1200"
+              data-aos-delay="2200"
+            >
+              Запрошуємо вас на святковий вечір, де Різдвяний підлітковий хор
+              представить програму, наповнену теплом, музикою та роздумами про
+              справжнє значення Різдва.
+            </p>
+            <img
+              src="img/hero-img.png"
+              alt="Різдвяний вечір"
+              class="hero__image"
+              width="200"
+              data-aos="fade-in"
+              data-aos-duration="1200"
+              data-aos-delay="2400"
+            />
+            <img
+              src="img/arrow-bottom.svg"
+              alt="Різдвяний вечір"
+              class="hero__arrow"
+              width="45"
+              height="45"
+            />
+          </div>
+        </section>
 
-<body>
-    <header class="header">
-        <div class="container"></div>
-    </header>
+        <section class="date">
+          <div class="container">
+            <h2 class="date__title" data-aos="fade-in" data-aos-duration="700">
+              Відчуйте радість Різдва <br />
+              разом з нами!
+            </h2>
+            <p class="date__item" data-aos="fade-in" data-aos-duration="700">
+              29.12.24 <br />
+              16:00
+            </p>
+          </div>
+        </section>
 
-    <main></main>
+        <section class="location">
+          <div class="container">
+            <h2
+              class="location__title"
+              data-aos="fade-in"
+              data-aos-duration="700"
+            >
+              Location
+            </h2>
+            <p
+              class="location__address"
+              data-aos="fade-in"
+              data-aos-duration="700"
+            >
+              Ворзель, кооп. "Ясна Поляна", <br />
+              вул. Вишнева 30 Б
+            </p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d266.4763893143018!2d30.10315512569272!3d50.54970250363338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1734993946203!5m2!1sru!2sua"
+              width="430"
+              height="300"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <a
+              href="https://www.google.com.ua/maps/place/%D0%A6%D0%B5%D1%80%D0%B2%D0%BA%D0%B0+%22%D0%9C%D0%A1%D0%A6+%D0%84%D0%A5%D0%91%22/@50.5497025,30.1031551,20.25z/data=!4m6!3m5!1s0x472b3b0023e83e8f:0x403689df1e88b60d!8m2!3d50.5496937!4d30.1031558!16s%2Fg%2F11ldqjp7t8?hl=ru&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
+              class="location__link"
+              >Відкрити карту</a
+            >
+          </div>
+        </section>
 
-    <footer class="footer">
-        <div class="container"></div>
-    </footer>
+        <section class="gift">
+          <div class="container">
+            <img
+              src="img/gift.png"
+              alt="gift"
+              width="45"
+              height="45"
+              class="gift__icon"
+            />
+            <h2 class="gift__title" data-aos="fade-in" data-aos-duration="700">
+              Подарунок для кожного гостя!
+            </h2>
+            <p class="gift__desc" data-aos="fade-in" data-aos-duration="700">
+              Усі, хто завчасно зареєструється, <br />
+              отримають приємний сюрприз
+            </p>
+            <form class="order js-form">
+              <input
+                type="text"
+                name="name"
+                placeholder="Ваше ім'я"
+                class="order__field"
+                required
+                data-aos="fade-right"
+                data-aos-duration="700"
+              />
+              <input
+                type="number"
+                name="count"
+                placeholder="Кількість людей"
+                class="order__field"
+                required
+                data-aos="fade-left"
+                data-aos-duration="700"
+              />
+              <input type="hidden" name="date" class="js-form-date" />
+              <button
+                type="submit"
+                class="order__submit"
+                data-aos="fade-up"
+                data-aos-duration="700"
+              >
+                Зареєструватися
+              </button>
+            </form>
+            <small
+              class="gift__warning"
+              data-aos="fade-in"
+              data-aos-duration="700"
+              >Зареєструватися можна до 27.12.2024 23:59</small
+            >
+            <p class="support" data-aos="fade-in" data-aos-duration="700">
+              З будь-яких питань звертайтесь за номером: <br />
+              <a href="tel:+380677013404" class="support__link"
+                >+380677013404 (Андрій)</a
+              >
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <div class="loader js-loader">
+        <img
+          src="img/loader.gif"
+          alt=""
+          width="50"
+          height="50"
+          class="loader__item"
+        />
+        <p class="loader__text">Зачекайте, будь-ласка...</p>
+      </div>
+    </div>
 
     <script defer src="js/main.js"></script>
-</body>
-
+  </body>
 </html>

@@ -60,9 +60,30 @@ a {
 }
 
 @font-face {
-  font-family: "Comfortaa";
-  src: url("../fonts/Comfortaa/Comfortaa-Regular.ttf");
+  font-family: "Edvardian";
+  src: url("../fonts/edwardianscriptitc.ttf");
   font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.ttf");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Medium.ttf");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.ttf");
+  font-weight: 600;
   font-display: swap;
   font-style: normal;
 }
@@ -71,22 +92,307 @@ html {
 }
 
 body {
-  font-family: "";
-  color: #FFFFFF;
+  position: relative;
+  font-family: "Montserrat";
+  color: #5b6252;
   line-height: 1.2;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 48rem;
+  height: 100vh;
+  background-image: url(../img/snowflake.png), url(../img/snowflake.png), url(../img/snowflake.png), url(../img/snowflake.png), url(../img/snowflake.png), url(../img/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: 3rem, 3rem, 4rem, 4rem, 3rem, cover;
+  background-position: top 6rem left 7.5rem, top 9rem right 6rem, top 35% left 2.5rem, bottom 30% right 3rem, bottom 10rem left 7.5rem, top center;
+  z-index: -1;
+  opacity: 0.4;
+}
+body.is-loader {
+  overflow: hidden;
+}
+
+.wrapper {
+  position: relative;
+  max-width: 48rem;
+  margin: 0 auto;
+  visibility: hidden;
+  overflow: hidden;
+}
+.wrapper::before, .wrapper::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60vh;
+  z-index: 5;
+  background-image: url(../img/bg-top.png);
+  background-size: cover;
+  background-position: bottom center;
+  animation-duration: 1400ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 700ms;
+}
+.wrapper::before {
+  animation-name: top-letter;
+  z-index: 10;
+}
+.wrapper::after {
+  top: auto;
+  bottom: 0;
+  background-image: url(../img/bg-bottom.png);
+  background-position: top center;
+  animation-name: bottom-letter;
 }
 
 .container {
-  max-width: 108rem;
+  padding: 0 2.5rem;
+}
+
+.support {
+  font-size: 1.3rem;
+  text-align: center;
+  line-height: 1.7;
+  margin-top: 4rem;
+}
+.support__link {
+  font-size: 1.8rem;
+}
+
+@keyframes top-letter {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@keyframes bottom-letter {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+.hero {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__title {
+  font-family: "Edvardian";
+  font-size: 7rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.hero__invitation {
+  position: relative;
+  padding: 2rem 3rem;
+  margin-bottom: 4rem;
+  font-size: 1.8rem;
+  text-align: center;
+  line-height: 2;
+}
+.hero__invitation::before, .hero__invitation::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 25rem;
+  height: 0.1rem;
+  background-color: #afafaf;
+}
+.hero__invitation::after {
+  top: auto;
+  bottom: 0;
+}
+
+.hero__image {
   margin: 0 auto;
+  opacity: 0.7;
 }
-@media screen and (max-width: 1200px) {
-  .container {
-    max-width: 69rem;
+
+.hero__arrow {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  animation-name: arrow;
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+}
+
+.thanks__title {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.thanks__desc {
+  font-size: 2.4rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+@keyframes arrow {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 0.7rem);
   }
 }
-@media screen and (max-width: 767px) {
-  .container {
-    max-width: 32rem;
-  }
+.date {
+  padding: 5rem 0;
+}
+
+.date__title {
+  font-size: 2.4rem;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.4;
+  margin-bottom: 2.5rem;
+}
+
+.date__item {
+  font-size: 5rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.location {
+  padding-bottom: 5rem;
+}
+
+.location__title {
+  font-family: "Edvardian";
+  font-size: 7rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.location__address {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.location__link {
+  height: 6rem;
+  border: 0.1rem solid #5b6252;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  text-decoration: none;
+  margin-top: 1rem;
+  background-color: #fff;
+}
+
+.gift {
+  padding-block: 2.5rem 7rem;
+}
+
+.gift__icon {
+  margin: 0 auto 2rem auto;
+}
+
+.gift__title {
+  font-size: 2.4rem;
+  text-align: center;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 3rem;
+}
+
+.gift__desc {
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 3rem;
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.order__field {
+  height: 6rem;
+  width: 100%;
+  border: 0.1rem solid #5b6252;
+  background-color: #fff;
+  font-size: 1.6rem;
+  padding: 0 2rem;
+}
+.order__field::-moz-placeholder {
+  color: #a1a1a1;
+}
+.order__field::placeholder {
+  color: #a1a1a1;
+}
+
+.order__submit {
+  height: 6rem;
+  width: 100%;
+  background-color: #5b6252;
+  color: #fff;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gift__warning {
+  display: block;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #ca4141;
+  margin-top: 2rem;
+}
+
+.loader {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6666666667);
+  -webkit-backdrop-filter: blur(0.3rem);
+          backdrop-filter: blur(0.3rem);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+  transition-duration: 300ms;
+  opacity: 0;
+  visibility: hidden;
+}
+.loader__text {
+  font-size: 2.2rem;
+  text-align: center;
+  line-height: 1.4;
+  color: #fff;
+}
+.loader.active {
+  opacity: 1;
+  visibility: visible;
 }/*# sourceMappingURL=index.css.map */

@@ -1,22 +1,108 @@
 html {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 body {
-    font-family: $main-font;
-    color: $main-color;
-    line-height: 1.2;
+  position: relative;
+  font-family: $font-main;
+  color: $color-primary;
+  line-height: 1.2;
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 48rem;
+    height: 100vh;
+    background-image: url(../img/snowflake.png), url(../img/snowflake.png),
+      url(../img/snowflake.png), url(../img/snowflake.png),
+      url(../img/snowflake.png), url(../img/hero-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 3rem, 3rem, 4rem, 4rem, 3rem, cover;
+    background-position: top 6rem left 7.5rem, top 9rem right 6rem,
+      top 35% left 2.5rem, bottom 30% right 3rem, bottom 10rem left 7.5rem,
+      top center;
+    z-index: -1;
+    opacity: 0.4;
+  }
+
+  &.is-loader {
+    overflow: hidden;
+  }
+}
+
+.wrapper {
+  position: relative;
+  max-width: 48rem;
+  margin: 0 auto;
+  visibility: hidden;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    z-index: 5;
+    background-image: url(../img/bg-top.png);
+    background-size: cover;
+    background-position: bottom center;
+    animation-duration: 1400ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 700ms;
+  }
+
+  &::before {
+    animation-name: top-letter;
+    z-index: 10;
+  }
+
+  &::after {
+    top: auto;
+    bottom: 0;
+    background-image: url(../img/bg-bottom.png);
+    background-position: top center;
+    animation-name: bottom-letter;
+  }
 }
 
 .container {
-    max-width: 108rem;
-    margin: 0 auto;
+  padding: 0 2.5rem;
+}
 
-    @media screen and (max-width: $breakpoint-md) {
-        max-width: 69rem;
-    }
+.support {
+  font-size: 1.3rem;
+  text-align: center;
+  line-height: 1.7;
+  margin-top: 4rem;
 
-    @media screen and (max-width: $breakpoint-sm) {
-        max-width: 32rem;
-    }
+  &__link {
+    font-size: 1.8rem;
+  }
+}
+
+@keyframes top-letter {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes bottom-letter {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
 }

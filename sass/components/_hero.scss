@@ -1,0 +1,80 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__title {
+  font-family: $font-decorative;
+  font-size: 7rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.hero__invitation {
+  position: relative;
+  padding: 2rem 3rem;
+  margin-bottom: 4rem;
+
+  font-size: 1.8rem;
+  text-align: center;
+  line-height: 2;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 25rem;
+    height: 0.1rem;
+    background-color: #afafaf;
+  }
+
+  &::after {
+    top: auto;
+    bottom: 0;
+  }
+}
+
+.hero__image {
+  margin: 0 auto;
+  opacity: 0.7;
+}
+
+.hero__arrow {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  animation-name: arrow;
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+}
+
+.thanks__title {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.thanks__desc {
+  font-size: 2.4rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+@keyframes arrow {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+
+  50% {
+    transform: translate(-50%, 0.7rem);
+  }
+}
